@@ -1,0 +1,38 @@
+{
+    "1": {
+        "idproducto": 1,
+        "nombre": "Campera",
+        "descripcion": "Campera de invierno",
+        "precio": 55000.0,
+        "cantidad": 12,
+        "marca": "Nike",
+        "color": "Blanco",
+        "genero": "U"
+    },
+    "2": {
+        "idproducto": 2,
+        "nombre": "Iphone 15",
+        "descripcion": "Celular inteligente",
+        "precio": 1000000.0,
+        "cantidad": 4,
+        "garantia": 12
+    },
+    "3": {
+        "idproducto": 3,
+        "nombre": "Laptop",
+        "descripcion": "Laptop con 16gb de ram y 512gb ssd",
+        "precio": 1500000.0,
+        "cantidad": 10,
+        "garantia": 24
+    },
+    "4": {
+        "idproducto": 4,
+        "nombre": "Pantalones",
+        "descripcion": "Pantalones vaqueros talla l",
+        "precio": 50000.0,
+        "cantidad": 25,
+        "marca": "Lois",
+        "color": "Azul",
+        "genero": "M"
+    }
+}
