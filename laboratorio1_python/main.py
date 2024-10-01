@@ -73,17 +73,20 @@ def mostrar_todos_los_productos(gestion):
     print("╔═══════════════════════════════════════════════════════════════")
     print("║               Listado completo de los Productos               ")
     print("╠═══════════════════════════════════════════════════════════════")
-    for producto in gestion.leer_datos().values():
-        if 'garantia' in producto:
-            print(f"║ {producto['idproducto']} - {producto['nombre']} - Precio {producto['precio']} ")
-        else:
-            print(f"║ {producto['idproducto']} - {producto['nombre']} - Precio {producto['precio']} ")
+    try:
+        productos=gestion.leer_todos_los_productos()
+        for producto in productos:
+            if isinstance(producto, ProductoElectronico):
+                print(f'║ ID: {producto.idproducto} NOMBRE: {producto.nombre} PRECIO: {producto.precio} GARANTIA: {producto.garantia}')
+            elif isinstance(producto, ProductoVestimenta):
+                print(f'║ ID: {producto.idproducto} NOMBRE: {producto.nombre} PRECIO: {producto.precio} MARCA: {producto.marca}')
+    except Exception as e:
+        print(f'Error al mostrar los productos {e}')
     print("╚═══════════════════════════════════════════════════════════════")
     input('Presione enter para continuar...')
 
 if __name__ == "__main__":
-    archivo_productos = 'productos_db.json'
-    gestion = GestionProductos(archivo_productos)
+    gestion = GestionProductos()
 
     while True:
         mostrar_menu()
