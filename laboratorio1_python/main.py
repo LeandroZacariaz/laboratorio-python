@@ -27,6 +27,7 @@ def mostrar_menu():
 
 def agregar_producto(gestion, tipo_producto):
     try:
+        idproducto = input ('Ingrese el id del producto: ')
         nombre = input('Ingrese nombre del producto: ')
         descripcion = input('Ingrese descripcion del producto: ')
         precio = float(input('Ingrese precio del producto: '))
@@ -34,12 +35,12 @@ def agregar_producto(gestion, tipo_producto):
 
         if tipo_producto == '1':
             garantia = int(input('Ingrese garantia en meses: '))
-            producto = ProductoElectronico(nombre, descripcion, precio, cantidad, garantia)
+            producto = ProductoElectronico(idproducto, nombre, descripcion, precio, cantidad, garantia)
         elif tipo_producto == '2':
             marca = input('Ingrese la marca del producto: ')
             color = input ('Ingrese el color del producto: ')
             genero = input ('Ingrese el género del producto H (Hombre), M (Mujer) o U (Unisex): ')
-            producto = ProductoVestimenta(nombre, descripcion, precio, cantidad, marca, color, genero)
+            producto = ProductoVestimenta(idproducto, nombre, descripcion, precio, cantidad, marca, color, genero)
         else:
             print('Opción inválida')
             return

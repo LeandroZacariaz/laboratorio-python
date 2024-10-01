@@ -13,10 +13,8 @@ Persistir los datos en archivo JSON.
 import json
 
 class Producto:
-    contador=0
-    def __init__(self, nombre, descripcion, precio, cantidad):
-        Producto.contador+=1
-        self.__idproducto=Producto.contador
+    def __init__(self, idproducto, nombre, descripcion, precio, cantidad):
+        self.__idproducto=idproducto
         self.__nombre=nombre
         self.__descripcion=descripcion
         self.__precio=self.validar_precio(precio)
@@ -28,7 +26,8 @@ class Producto:
     
     @idproducto.setter
     def idproducto(self, nuevo_id):
-        self._idproducto = nuevo_id
+        self._idproducto = self.validar_id(nuevo_id)
+
 
     @property
     def nombre(self):
@@ -83,8 +82,8 @@ class Producto:
 
 
 class ProductoElectronico(Producto):
-    def __init__(self, nombre, descripcion, precio, cantidad, garantia):
-        super().__init__(nombre, descripcion, precio, cantidad)
+    def __init__(self, idproducto, nombre, descripcion, precio, cantidad, garantia):
+        super().__init__(idproducto, nombre, descripcion, precio, cantidad)
         self.__garantia= self.validar_garantia(garantia)
 
     @property
@@ -111,8 +110,8 @@ class ProductoElectronico(Producto):
 
 
 class ProductoVestimenta(Producto):
-    def __init__(self, nombre, descripcion, precio, cantidad, marca, color, genero):
-        super().__init__(nombre, descripcion, precio, cantidad)
+    def __init__(self, idproducto, nombre, descripcion, precio, cantidad, marca, color, genero):
+        super().__init__(idproducto, nombre, descripcion, precio, cantidad)
         self.__marca=marca
         self.__color=color
         self.__genero=self.validar_genero(genero)
