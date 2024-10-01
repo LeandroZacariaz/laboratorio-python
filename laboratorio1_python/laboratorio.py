@@ -17,7 +17,11 @@ from decouple import config
 
 class Producto:
     def __init__(self, idproducto, nombre, descripcion, precio, cantidad):
+<<<<<<< HEAD:laboratorio.py
         self.__idproducto=self.validar_id(idproducto)
+=======
+        self.__idproducto=idproducto
+>>>>>>> 5ff16bddf98dba16f585c2408fb418297159e9d3:laboratorio1_python/laboratorio.py
         self.__nombre=nombre
         self.__descripcion=descripcion
         self.__precio=self.validar_precio(precio)
@@ -30,6 +34,7 @@ class Producto:
     @idproducto.setter
     def idproducto(self, nuevo_id):
         self._idproducto = self.validar_id(nuevo_id)
+<<<<<<< HEAD:laboratorio.py
     
     def validar_id(self, id):
         try:
@@ -39,6 +44,9 @@ class Producto:
             return id_num
         except ValueError:
             raise ValueError("El ID debe ser numérico.")
+=======
+
+>>>>>>> 5ff16bddf98dba16f585c2408fb418297159e9d3:laboratorio1_python/laboratorio.py
 
     @property
     def nombre(self):

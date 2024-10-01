@@ -1,0 +1,10 @@
+{
+    "1": {
+        "idproducto": "1",
+        "nombre": "Producto 1",
+        "descripcion": "Probando",
+        "precio": 500.0,
+        "cantidad": 2,
+        "garantia": 12
+    }
+}
